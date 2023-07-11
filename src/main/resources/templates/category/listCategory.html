@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Category List</title>
+</head>
+<body>
+    <h1>Category List</h1>
+
+    <table>
+        <tr>
+            <th>카테고리 이름</th>
+            <th>Actions</th>
+        </tr>
+        <tr th:each="category : ${categories}">
+            <td th:text="${category.categoryName}"></td>
+            <td>
+                <a th:href="@{/categories/{categoryId}/edit(categoryId=${category.categoryNo})}">수정</a>
+                <a th:href="@{/categories/{categoryId}/delete(categoryId=${category.categoryNo})}">삭제</a>
+            </td>
+        </tr>
+    </table>
+
+    <a href="/categories/add">추가하기</a>
+    <a th:href="@{/products}">상품 목록페이지</a>
+</body>
+</html>

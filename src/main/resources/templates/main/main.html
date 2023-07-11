@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+      <meta charset="UTF-8">
+    <title>쇼핑몰 메인화면</title>
+  
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+ 
+    <style>
+        /* 스와이퍼 컨테이너 스타일 */
+        main {
+        display:flex;
+        }
+        
+        .swiper-container {
+          width: 100%;
+          height: 800px;
+        }
+
+        .swiper-slide img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        /* 네비게이션 스타일 */
+        nav {
+          background-color: #1C1C1C;
+          padding: 10px 0;
+        }
+
+        nav ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+        }
+
+        nav ul li {
+          margin-right: 20px;
+        }
+
+        nav ul li a {
+          text-decoration: none;
+          color: #fff;
+        }
+
+
+    </style>
+      <link th:href="@{/css/header.css}" rel="stylesheet" />
+       <link th:href="@{/css/footer.css}" rel="stylesheet" />
+</head>
+<body>
+  <header th:replace="etc/header :: headerFragment"></header>
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="image/main_img.jpg" alt="Image 1"></div>
+        <div class="swiper-slide"><img src="image/main_img1.jpg" alt="Image 2"></div>
+        <div class="swiper-slide"><img src="image/main_img2.jpg" alt="Image 3"></div>
+    </div>
+</div>
+
+
+<nav>
+
+</nav>
+
+<main>
+
+    <div>
+        <ul>
+            <!-- 상품 목록을 동적으로 생성 -->
+            <li th:each="product : ${newArrivals}">
+                <h3 th:text="${product.name}"></h3>
+                <p th:text="${product.description}"></p>
+                <p th:text="${product.price}"></p>
+            </li>
+        </ul>
+    </div>
+</main>
+
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
+        }
+    });
+</script>
+
+</body>
+<footer th:replace="etc/footer :: footerFragment"></footer>
+</html>

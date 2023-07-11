@@ -1,0 +1,49 @@
+
+
+.footer-container{
+display: fiex;
+}
+
+.xans-element-.xans-layout.xans-layout-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.f-box {
+
+  margin: 30px;
+}
+
+.f-box h3 {
+  text-align: center;
+  margin: 30px ;
+}
+
+.f-box ul {
+  list-style: none;
+  padding: 10px;
+  margin: 10px;
+}
+
+.f-box ul li {
+  margin-bottom: 10px;
+  
+}
+
+.f-box ul li a {
+  text-decoration: none;
+  color: #000;
+  margin: 30px 200px;
+  
+}
+
+.f-box p {
+  text-align: center;
+  margin-bottom: px;
+}
+
+ .element.style {
+    margin-left: 150px;
+}
+
